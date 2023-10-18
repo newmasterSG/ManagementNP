@@ -1,0 +1,40 @@
+﻿@model Employee
+
+<h2>Редагувати співробітника</h2>
+
+@using (Html.BeginForm("Edit", "Employee", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.Id)
+    <div class="form-group">
+        @Html.LabelFor(model => model.FirstName)
+        @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.LastName)
+        @Html.TextBoxFor(model => model.LastName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Patronimyc)
+        @Html.TextBoxFor(model => model.Patronimyc, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Birthday)
+        @Html.TextBoxFor(model => model.Birthday, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Department)
+        @Html.TextBoxFor(model => model.Department, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Position)
+        @Html.TextBoxFor(model => model.Position, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Salary)
+        @Html.TextBoxFor(model => model.Salary, new { @class = "form-control" })
+    </div>
+    <!-- Додайте інші поля форми -->
+    <button type="submit" class="btn btn-primary">Зберегти</button>
+}
+
+@Html.ActionLink("Назад до списку", "Index")
